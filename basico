@@ -1,0 +1,396 @@
+# Exemplos com Print
+
+print(1+1)
+print(10/2)
+print(10/1) 
+# Acontece erro pq não pode ser dividido por zero ( caso aconteça )
+
+
+#exemplo de como utilizar variaveis
+a=1
+b=3
+a+b
+
+nome = input('Qual seu nome?')
+print('Olá' , nome)
+
+
+print('1+1') 
+# ele entende os numeros como strings dai imprime assim nmesmo
+
+
+input('Qual seu nome?')
+
+
+print(123) 
+# imprima 123
+
+
+a=1
+b=3
+a+b
+
+# Booleanos
+
+'D' in 'Daniel' # testando booleanos se é verdadeiro ou falso
+
+
+'d' in 'Daniel' # testando booleanos se é verdadeiro ou falso
+# ele faz diferenciação de maiuscula e minuscula
+
+
+# Utilizando o .format e %d
+
+Interessante que toda formatação do .format começa com :
+:< alinha o texto a esquerda (se tiver espaço na tela p isso )
+:> alinha o texto a direita (se tiver espaço na tela p isso )
+:^ alinha o texto no centro (se tiver espaço na tela p isso )
+:+ coloca o sinal sempre na frente do numero (independente se é positivo ou negatico)
+:, coloca a virgula como separador de milhar
+:_ coloca o _ como separador de milhar
+:e formato cientifico
+:f numero com quantidade fixa de casas decimais
+:x formato HEX para minuscula (para cores)
+:X formato HEX para maiuscula (para cores)
+:% formato percentual
+
+
+
+faturamento = 100
+texto= 'faturamento da loja foi de {}' 
+# criei a variavel texto caso precise repetir diversas vezes o mesmo texto já está pronto.
+print (texto.format(faturamento))
+
+
+
+#alinhando na direita
+faturamento = 100
+texto= 'faturamento da loja foi de {:>30} reais' 
+# observe q foi criado um espaço de 30 caracteres com alinhamento na direita.
+print (texto.format(faturamento))
+
+
+
+#alinhando na esquerda
+faturamento = 100
+texto= 'faturamento da loja foi de {:<10} reais' 
+# observe q foi criado um espaço de 10 caracteres com alinhamento na esquerda.
+print (texto.format(faturamento))
+
+
+
+#alinhando no centro
+faturamento = 100
+texto= 'faturamento da loja foi de {:^50} reais' 
+# observe q foi criado um espaço de 50 caracteres com alinhamento no centro.
+print (texto.format(faturamento))
+
+
+
+QtdeProduto = 100
+valor = 200
+custo = 50
+lucro = QtdeProduto*valor - QtdeProduto*custo
+print ('A quantidade de produto foi {0}, o valor de venda foi {1}, o Lucro foi de {2}, poderiamos melhorar a quantidade de {0} para 200 . '.format(QtdeProduto, valor, lucro))
+# outra forma de chamar as variaveis no .format é utilizando os numeros dentro do {} quando for repetir as variáveis. OBS: depois que numerar o primeiro {} precisa numerar todos os outros.
+print ('A quantidade de produto foi %d , o valor de venda foi %d, o Lucro foi de %d, poderiamos melhorar a quantidade de %d para 200 . ' % (QtdeProduto, valor, lucro, QtdeProduto) )
+# outra forma d escrever é usando %d para numeros. Mas, com isso, sou obrigado a escrever todas as variaveis no final do texto.
+
+
+# separando milhar e colocando sinal na frente dos numeros
+QtdeProduto = 100
+valor = 200
+custo = 250
+faturamento = QtdeProduto*valor
+lucro = faturamento - QtdeProduto*custo
+print ('O faturmanto foi de {:,} e o lucro foi de {:,}'.format(faturamento, lucro))
+# a virgula separa milhar e repare que na resposta de cima o q é positivo não apresenta sinal.
+print ('O faturmanto foi de {:+,} e o lucro foi de {:+,}'.format(faturamento, lucro))
+# a virgula separa milhar e o sinal de + indica que é para manter o sinal
+
+
+
+# casas decimais
+QtdeProduto = 100
+valor = 200
+custo = 250
+faturamento = QtdeProduto*valor
+lucro = faturamento - QtdeProduto*custo
+print ('O faturmanto foi de {:.2f} e o lucro foi de {:.1f}'.format(faturamento, lucro))
+# .2f siginifica 2 casas decimais após a virgula e .1f significa 1 casa decimal após a virgula
+print ('O faturmanto foi de {:+.2f} e o lucro foi de {:+.3f}'.format(faturamento, lucro))
+#  + indica que é para manter o sinal e o .2f que são duuas casas após a virgula
+
+
+
+# Formato Brasileiro
+QtdeProduto = 100
+valor = 200
+custo = 250
+faturamento = QtdeProduto*valor
+lucro = faturamento - QtdeProduto*custo
+ print ('O faturmanto foi de R${:_.2f} e o lucro foi de R${:_.2f}'.format(faturamento, lucro))
+# .2f siginifica 2 casas decimais após a virgula e .1f significa 1 casa decimal após a virgula
+print ('O faturmanto foi de {:+.2f} e o lucro foi de {:+.3f}'.format(faturamento, lucro))
+#  + indica que é para manter o sinal e o .2f que são duuas casas após a virgula
+
+
+QtdeProduto = 100
+valor = 200
+custo = 150
+faturamento = QtdeProduto*valor
+custoTotal= custo*QtdeProduto
+lucro = faturamento - custoTotal
+marg_lucro = lucro/faturamento
+print('A margem de lucro foi de {:.2%}'.format(marg_lucro))
+
+
+
+nome = input('Qual sua idade?')
+print('Que bacana você tem {} anos'.format(nome)) 
+# uma forma mais interessante de mudar uma int p string p/ aparecer no texto
+
+
+#Captalize & casefold (alterando de maiuscula p/ minuscula)
+nome = 'thiago'
+print(nome.capitalize())
+# Captalize serve para deixar a primeira letra maiuscula.
+
+
+nome = 'Thiago'
+nome2 = 'THIAGAO'
+print(nome.casefold())
+#este serve para colocar todo o texto em letra minuscula
+print(nome2.casefold())
+#este serve para colocar todo o texto em letra minuscula
+
+
+#Count Contador
+texto = 'thiago@gmail.com'
+texto2 = 'oi. ola. até.'
+print( texto.count('.'))
+#este serve para contar a quantidade de vezes que o . aparece na string
+print( texto2.count('.'))
+#este serve para contar a quantidade de vezes que o . aparece na string
+print( texto2.count('a'))
+#este serve para contar a quantidade de vezes que o (a) aparece na string
+
+
+#Função Len e Pegando uma letra, palavra ou parte da string
+email = 'zezinho@gmail.com'
+nome = 'zezinho seilaoq'
+print (len(nome)) # este serve para contar quantos caracteres tem 
+print (len(email)) # este serve para contar quantos caracteres tem 
+print (nome[4]) # este serve para pegar o que esta na posição 4 da string (lembtando que começa com 0)
+print (nome[-4]) # este serve para pegar o que esta na posição 4 da string de trás p frente (começa com -1)
+print (nome[:4]) # este serve para pegar o texto todo com 4 caracteres
+print (nome[:-6]) # este serve para pegar o texto todo exceto os ultimos 6 caracteres
+print (nome[5:]) # este serve para pegar o texto do 5 em diante
+
+
+
+b = "Hello, World!"
+print(b[7:12]) # pega da posição 7 ate posição 12
+
+
+
+b = "Hello, World!"
+print(b[7:]) # pega da posição 7 ate o final
+
+
+
+b = "Hello, World!"
+print(b[0:5]) # pega da posição 0 ate posição 5
+print(b[:5]) # pega do inicio ate posição 5
+
+
+print("hello world"[::-1]) # assim inverte o texo
+
+
+
+#Endswith verifica se o texto termina comm um valor específico
+email = 'zezinho@gmail.com'
+print(email.endswith('@gmail.com'))
+
+
+#Find procura um texto dentro de outro texto
+email = 'zezinho@gmail.com'
+# ele busca o item pesquisado e retorna com a posição do item encontrado
+print(email.find('@'))
+
+
+
+nome = 'zezinho seilaoq'
+print(nome.find('e'))
+# ele não informa que o 'e' se repete 
+print(nome.find('sei'))
+#ele consegue encontrar parte de palavras informando a localização da primeira letra
+
+
+nome = 'zezinho seilaoq'
+print(nome.find('@'))
+# Observe que quando não encontra no comando find  o objeto ele coloca resultado como -1
+
+
+
+#Isalnum verifica se tem apenas letras e números
+texto = 'Thiago123'
+texto2 = 'Thíago123'
+texto3 = 'Thiago123@'
+print(texto.isalnum())
+# verdadeiro pq só tem letras e numeros
+print(texto2.isalnum())
+# aceita acento
+print(texto3.isalnum())
+#não aceita @
+
+
+#Isalpha veifica se o texto e todo feito de letras
+texto = 'Thiago'
+texto2 = 'Thíago'
+texto3 = 'Thiago123'
+texto4 = 'Thiago@'
+print(texto.isalpha())
+# verdadeiro pq só tem letras 
+print(texto2.isalpha())
+# aceita acento
+print(texto3.isalpha())
+#não numeros
+print(texto4.isalpha())
+#não aceita @
+
+
+#Isnumeric verifica se tem apenas numeros
+texto = '123'
+texto2 = '123T'
+texto3 = 'Thiago123'
+texto4 = '122@'
+print(texto.isnumeric())
+# verdadeiro pq só tem numeros 
+print(texto2.isnumeric())
+# não aceita letras
+print(texto3.isnumeric())
+# não aceita letras
+print(texto4.isnumeric())
+#não aceita @
+
+
+#Replace substitui o q quer tirar do texto
+texto = '1000.00'
+print(texto.replace('.',','))
+#na primeira parte do parenteses é o que esta no texto e em seguida é o que é para ser substituido
+
+
+#Split separa uma string de acordo com um delimitador em textos diferentes
+email = 'thiago@gmail.com'
+print(email.split('@'))
+
+
+#Splitlines divide o texto de acordo com os enters
+texto = '''ola me chamo thiago
+estou estudando python
+estou estudando 
+muito
+gosto de aprender'''
+#cada vez que der um enter num texto precisa se colocar mais uma aspas
+print(texto.splitlines())
+
+
+
+#Startswith verifica se a string começa com determinado texto
+texto = 'BEB12345'
+print(texto.startswith('BEB'))
+
+
+#Strip retira caracteres indesejados dos textos
+texto = '  BEB12345 '
+print(texto.strip('BEB'))
+# retira espaços extras no inicio e no final
+
+
+#Title coloca primeira letra maiuscula
+nome = 'thiago'
+nome2 = 'Thiago'
+print(nome.title())
+print(nome2.title()) # ele entende mesmo que se a primeira letra for maiuscula não precisa fazer alteração
+
+
+#Upper coloca o texto todo em letra maiuscula
+texto = 'beb123'
+print(texto.upper())
+
+
+#Exercicio cpf
+cpf = input('Digite seu cpf com 11 digitos (apenas numeros)')
+# retirando caracteres indesejados do texto (espaços no inicio e no final)
+cpf = cpf.strip()
+# tirar os pontos
+cpf = cpf.replace('.','')
+#tirar os traços
+cpf = cpf.replace('-','')
+#se o cpf tiver 11 caracteres e os caracteres forem apenas numeros
+if len(cpf) == 11 and cpf.isnumeric() == True:
+   print(cpf)
+else:
+    print('digite novamente seu cpf')
+    
+    
+    
+    
+    
+    #Exercicio e-mail
+    
+    # eu fiz desse jeito
+
+nome = input('Digite seu nome ')
+# nome com letra maiuscula
+nome = nome.title()
+
+# testa se todos os caracteres são letras
+if nome.isalpha(): 
+
+    #entra com dados do e-mail
+    email = input('Digite seu e-mail ')
+
+    #testa se exiete @ no corpo do e-mail e se termina com .com ou .br
+    if '@' in email and email.endswith('.com') or email.endswith('.br'):
+
+        print('Muito obrigado {}!'.format(nome), 'E-mail cadastrado com sucesso!')
+    else:
+         #caso o e-mail esteja escrito incorretamente
+         print('digite seu e-mail corretamente')  
+else:
+     # caso o nome tenha caracteres diferentes de apenas letras, reescrever o nome
+     print('escreva seu nome corretamente')
+
+
+
+
+
+# o professor fez desse jeito
+
+nome = input('Escreva seu nome ' )
+email = input('Escreva seu e-mail ')
+
+#aqui busca se existe @ no e-mail, caso não exista a informação retornará como -1
+pos_a = email.find('@')
+
+servidor = email[pos_a:]
+
+
+#aqui ele testa p saber se nome e e-mail existem
+if nome and email:
+
+   if pos_a != -1 and '.' in servidor:
+     print('Cadastro concluido!')
+
+   else:
+      print('Digite seu nome e e-mail corretamente')
+
+else:
+  print('Escreva novamente o nome e o e-mail')
+
+
+
+
+
